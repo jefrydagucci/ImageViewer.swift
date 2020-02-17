@@ -86,6 +86,7 @@ class ImageViewerController:UIViewController, UIGestureRecognizerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        guard let imageItem = imageItem else { return }
         switch imageItem {
         case .image(let img):
             imageView.image = img
@@ -102,8 +103,6 @@ class ImageViewerController:UIViewController, UIGestureRecognizerDelegate {
                         }
                     }
                 }
-        default:
-            break
         }
         
         addGestureRecognizers()
